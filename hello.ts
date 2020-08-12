@@ -1,10 +1,20 @@
-import set from 'lodash/set';
-import fpSet from 'lodash/fp/set';
+import throttle from 'lodash/throttle';
 
-const obj = {};
+const x = throttle(async () => {
+  console.log(`${new Date()} hello x`)
+}, 3000);
 
-const obj1 = set(obj, 'aaa', 'normal-set');
-console.log('set:', obj, obj1);
+function y() {
+  throttle(async () => {
+    console.log(`${new Date()} hello y`)
+  }, 3000)()
+}
 
-const obj2 = fpSet('bbb', 'normal-set', obj);
-console.log('fp set:', obj, obj2);
+setInterval(async () => {
+  x()
+  y()
+}, 1000);
+
+console.log(new Date())
+
+

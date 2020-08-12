@@ -1,12 +1,9 @@
-TypeScript Lodash fp Demo
+TypeScript Lodash throttle Demo
 ===========================
 
-Lodash中提供了fp（函数式编程）版本的实现，它与普通版的区别在于：
+throttle保证在某个wait时间内，不论调用多少次，只会有一次操作。
 
-1. 不修改原对象
-2. 调整了参数顺序方便组合
-
-尽量使用同一种风格，不要混用。
+注意要使用throttle生成一个固定的函数供调用，而不是每次都生成一个
 
 ```
 npm install
